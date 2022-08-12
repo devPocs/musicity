@@ -1,0 +1,49 @@
+doctype html 
+html 
+    head 
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, inittial-scale=1.0')
+        title Musicity | #{title}
+
+        //-fonts
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+        link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap' rel='stylesheet')
+        link(rel='preconnect' href='https://fonts.googleapis.com' )
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin )
+        link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Work+Sans:wght@300&display=swap' rel='stylesheet')
+        link(rel='preconnect' href='https://fonts.googleapis.com') 
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+        link(href='https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap' rel='stylesheet')
+        //-css
+        link(rel='stylesheet' href='/css/style.css')
+    body 
+        main.main_container
+            //-header
+            include _song-header
+
+            //-content
+            .signup-form 
+                h2.heading-secondary.ma-t-lg #{title}
+                form.signup_form
+                    input#name.form__input(type='text' placeholder='Name' required)
+                    br
+                    input#signup_email.form__input(type='email' placeholder='Your Email', required)
+                    br
+                    input#signup_password.form__input(type='password' placeholder='Your Password', required, minlength='8') 
+                    br
+                    input#confirm__password.form__input(type='password' placeholder='Confirm Password', required, minlength='8')
+                    br
+                    input#btn(type='submit' class="form_input" value='SignUp')
+
+
+            //-footer
+            include _footer
+
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+script(src="/js/signup.js")
+script(src="/js/login.js")
+script(src="/js/logout.js")
+script(src="/js/alert.js")

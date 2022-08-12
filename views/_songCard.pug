@@ -1,0 +1,11 @@
+
+.song_tab  
+    .song_image--container 
+        img(src=`/img/${song.image[0]}`, alt=url, class="song__img")
+    .description
+        ul.song_info 
+            li.song_info--item Title: #{song.title}
+            li.song_info--item Artist: #{song.artist}
+            li.song_info--item Album: #{song.album}
+            li.song_info--item Release Date: #{song.yearReleased}
+            a.button#more_info(href=`/songs/${song.slug}`) See More...

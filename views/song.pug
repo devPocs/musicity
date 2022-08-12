@@ -1,0 +1,15 @@
+
+.song
+    div.song_details-container
+        img(class='banner' src='../../img/tt2.jpg')
+        div.title_artist
+            img(class='song_details-img' src=`/img/${results.image[0]}`)
+            div.title <i class="fa-brands fa-itunes-note"></i> #{results.title}
+
+            |   --
+
+            div.artist_name #{results.artist}
+
+
+        .lyrics
+            p #{results.lyrics} 

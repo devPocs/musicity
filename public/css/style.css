@@ -1,0 +1,507 @@
+*,
+*::before *::after {
+  box-sizing: border-box;
+}
+/*custom styles*/
+:root {
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Work Sans", sans-serif;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+  --clr-light-2: #f5f5f5;
+  --clr-text-1: #2a2a2a;
+  --clr-text-2: #ffb347;
+  --clr-text-3: #707070;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --fs-hd: 1.25rem;
+  --fs-bt: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
+}
+body {
+  color: var(--clr-text-1);
+  line-height: 1.5;
+  background-color: var(--clr-light);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+}
+
+@media (min-width: 862px) {
+  .main_container {
+    width: 95%;
+    margin: auto;
+    max-width: 1300px;
+  }
+  /**header and its components**/
+  .header {
+    height: 500px;
+    background-image: url("./../img/bg.jpg");
+    display: flex;
+    align-items: flex-start;
+  }
+  .header_logo {
+    margin: 0.6em 1em;
+    width: 60%;
+  }
+  .header_logo h2 {
+    opacity: 0.8;
+  }
+  .button_container {
+    width: 40%;
+  }
+  .welcome {
+    color: var(--clr-text-2);
+    margin-right: 1em;
+    font-size: 1.2rem;
+  }
+  .signUp_button,
+  .login_button,
+  .logout_button {
+    display: inline-block;
+    font-size: var(--fs-bt);
+    padding: 0.25em 1em;
+    border: 0.1em solid var(--clr-light);
+    margin: 6rem 0rem 0.3rem 0.3rem;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--clr-light);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .login_button {
+    color: var(--clr-accent);
+  }
+  .login_button:hover {
+    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+  }
+  .logout_button:hover {
+    cursor: pointer;
+  }
+
+  /**overview and its components**/
+  .overview {
+    width: 100%;
+  }
+  .overview h1 {
+    text-align: center;
+    font-size: var(--fs-h1);
+  }
+  .songs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 4px;
+    margin-top: 10px;
+  }
+  .song__img {
+    width: 100%;
+    height: 250px;
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
+    background-blend-mode: darken;
+  }
+  .song_image--container {
+    background-color: var(--clr-dark);
+  }
+  .description {
+    background-color: var(--clr-dark);
+    height: 250px;
+    color: var(--clr-text-3);
+    position: relative;
+    margin-top: -0.935em;
+  }
+  .song_tab {
+    margin-top: 1.2em;
+  }
+  #more_info {
+    position: absolute;
+    bottom: 25px;
+    left: 32%;
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 0.2em 0.8em;
+    border: 0.1em solid var(--clr-accent);
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--clr-accent);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .song_info {
+    padding: 1em 1.2em;
+  }
+
+  .song_info li {
+    list-style-type: none;
+  }
+
+  /**song details page**/
+  .song-header {
+    display: flex;
+    background-color: var(--clr-dark);
+  }
+  .song_details-container {
+    background-color: var(--clr-dark);
+  }
+  .banner {
+    background-image: url(./../img/tt2.jpg);
+    width: 100%;
+  }
+  .title_artist {
+    display: flex;
+    align-items: center;
+    color: var(--clr-text-2);
+    font-size: 1.25rem;
+  }
+  .song_details-img {
+    width: 15%;
+    border-radius: 50%;
+    margin: 0.5em 0.5em;
+  }
+
+  .lyrics {
+    display: flex;
+    color: var(--clr-text-3);
+    margin-top: 2em;
+  }
+  .lyrics p {
+    width: 60%;
+    margin: 3em;
+  }
+
+  /**footer and footer items**/
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 1.25em;
+    margin-top: 3em;
+    background-color: var(--clr-light-2);
+  }
+  .footer img {
+    height: 7em;
+    padding-left: 1.25em;
+    padding-bottom: 1.25em;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent);
+  }
+  .footer_nav {
+    display: flex;
+  }
+  .footer_nav--item {
+    margin: 1.25em;
+    list-style-type: none;
+  }
+  .footer_nav--item a {
+    text-decoration: none;
+    color: var(--clr-txt1);
+    font-size: var(--fs-bt);
+  }
+  .footer_nav--container {
+    width: 50%;
+  }
+  .copyright {
+    background-color: var(--clr-dark);
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 1.5em;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  /**form stuff-- login and signUp**/
+
+  form {
+    margin-top: 1.2em;
+  }
+  .form__input {
+    width: 600px;
+    border: none;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #16e0bd;
+    padding: 0.4em;
+    font-family: var(--ff-primary);
+  }
+  #btn {
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+    text-align: center;
+    width: 6rem;
+    background-color: var(--clr-dark);
+    color: var(--clr-accent);
+    padding: 0.3em;
+    border-color: transparent;
+  }
+  #btn:hover {
+    cursor: pointer;
+  }
+  .login-form,
+  .signup-form {
+    transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .logout_button:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 862px) {
+  /**header and its components**/
+  .header {
+    height: 200px;
+    background-image: url("./../img/bg.jpg");
+    display: flex;
+    align-items: center;
+  }
+  .header_logo {
+    margin: 0.6em 1em;
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+  .header_logo img {
+    width: 100px;
+  }
+  .header_logo h2 {
+    opacity: 0.8;
+    font-size: 1.2em;
+    color: var(--clr-accent);
+  }
+  .button_container {
+    width: 35%;
+  }
+  .welcome {
+    color: var(--clr-text-2);
+    margin-right: 0.5em;
+    font-size: 1rem;
+  }
+  .signUp_button,
+  .login_button,
+  .logout_button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.2em 0.5em;
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--clr-light);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .login_button {
+    color: var(--clr-accent);
+  }
+  .login_button:hover {
+    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+  }
+  .logout_button:hover {
+    cursor: pointer;
+  }
+
+  /**overview and its components**/
+  .overview {
+    width: 100%;
+  }
+  .overview h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .songs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 4px;
+    margin-top: 10px;
+  }
+  .song__img {
+    width: 100%;
+    height: 250px;
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
+    background-blend-mode: darken;
+  }
+  .song_image--container {
+    background-color: var(--clr-dark);
+  }
+  .description {
+    background-color: var(--clr-dark);
+    height: 170px;
+    color: var(--clr-text-3);
+    position: relative;
+    margin-top: -0.935em;
+  }
+  .song_tab {
+    margin-top: 1.2em;
+    font-size: 0.75rem;
+  }
+  #more_info {
+    position: absolute;
+    bottom: 25px;
+    left: 32%;
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.2em 0.8em;
+    border: 0.1em solid var(--clr-accent);
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--clr-accent);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .song_info {
+    padding: 1em 1.2em;
+  }
+
+  .song_info li {
+    list-style-type: none;
+  }
+
+  /**song details page**/
+  .song-header {
+    display: flex;
+    background-color: var(--clr-dark);
+  }
+  .song_details-container {
+    background-color: var(--clr-dark);
+  }
+  .banner {
+    background-image: url(./../img/tt2.jpg);
+    width: 100%;
+  }
+  .title_artist {
+    display: flex;
+    align-items: center;
+    color: var(--clr-text-2);
+    font-size: 0.9rem;
+  }
+  .song_details-img {
+    width: 15%;
+    border-radius: 50%;
+    margin: 0.5em 0.5em;
+  }
+
+  .lyrics {
+    display: flex;
+    color: var(--clr-text-3);
+  }
+  .lyrics p {
+    width: 60%;
+    margin-left: 1em;
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 1.25em;
+    margin-top: 3em;
+    background-color: var(--clr-light-2);
+  }
+  .footer img {
+    height: 7em;
+    padding-left: 1.25em;
+    padding-bottom: 1.25em;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo h2 {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent);
+  }
+
+  .footer_nav--item {
+    margin: 0.5;
+    list-style-type: none;
+  }
+  .footer_nav--item a {
+    text-decoration: none;
+    color: var(--clr-txt1);
+    font-size: 0.8rem;
+  }
+  .footer_nav--container {
+    width: 40%;
+  }
+  .copyright {
+    background-color: var(--clr-dark);
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 1.5em;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  .song-header {
+    align-items: center;
+  }
+  /**form stuff-- login and signUp**/
+
+  form {
+    margin-top: 1.2em;
+  }
+  .form__input {
+    font-size: 0.7rem;
+    width: 300px;
+    border: none;
+    margin-bottom: 0.25em;
+    border-bottom: 1px solid #16e0bd;
+    padding: 0.3em;
+    font-family: var(--ff-primary);
+  }
+  #btn {
+    font-family: var(--ff-primary);
+    font-size: 0.7rem;
+    text-align: center;
+    width: 4rem;
+    background-color: var(--clr-dark);
+    color: var(--clr-accent);
+    padding: 0.3em;
+    border-color: transparent;
+  }
+  #btn:hover {
+    cursor: pointer;
+  }
+  .login-form,
+  .signup-form {
+    transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  /**error page**/
+  .errorMessage h1 {
+    font-size: 1rem;
+    color: var(--clr-text-3);
+  }
+  .errorMessage h3 {
+    font-size: 0.8rem;
+    color: var(--clr-text-3);
+  }
+}

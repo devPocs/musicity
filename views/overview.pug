@@ -1,0 +1,8 @@
+extends base
+
+block content
+    div.overview
+        h1 Discover Your Vibes!
+        div.songs_container
+            each song in songs 
+                include _songCard

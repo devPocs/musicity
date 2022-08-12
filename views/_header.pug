@@ -1,0 +1,13 @@
+header.header 
+    div.logo.header_logo 
+        img(src='img/headset1.png' alt='header-logo')
+        h2 MusiCity
+    if user
+        .button_container 
+            span.welcome Hi, #{user.name}
+            a.logout_button Log Out
+    else
+        div.button_container
+            a.signUp_button(href='./signup') Sign Up
+            a.login_button(href='./login') Log In
+
