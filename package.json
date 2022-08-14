@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "serve -s build",
     "dev": "nodemon server.js"
   },
   "author": "foskeyz",
@@ -21,6 +21,7 @@
     "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
+    "serve": "^14.0.1",
     "validator": "^13.7.0"
   },
   "devDependencies": {
