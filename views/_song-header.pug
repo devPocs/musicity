@@ -1,7 +1,8 @@
 header.song-header 
     div.logo.header_logo 
         img(src='../../img/headset1.png' alt='header-logo')
-        h2 MusiCity
+        h2 
+            a(href='/') MusiCity
     if user
         .button_container 
             span.welcome Hi, #{user.name}

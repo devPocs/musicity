@@ -29,14 +29,18 @@ exports.login = catchAsync(async (req, res, next) => {
   // check if the email and password were sent from the client
   const { email, password } = req.body
   if (!email || !password) {
-    return next(new AppError("Please, provide an email and password"), 400)
+    return res.status(401).render("error")
   }
 
   //check if user exists and password is correct
   const user = await User.findOne({ email: email }).select("password")
 
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError("incorrect email or password", 401))
+    return res.status(401).render("error", {
+      title: "Error",
+      statusCode: 401,
+      message: "Incorrect email or password! pls, login again.",
+    })
   }
   //if everything is correct, send the token back to the client
   const token = signToken(user._id)
@@ -48,6 +52,7 @@ exports.login = catchAsync(async (req, res, next) => {
     })
     .json({ status: "success" })
 })
+
 exports.logout = (req, res) => {
   res
     .cookie("jwt", "loggedOut", {
@@ -68,7 +73,11 @@ exports.protectRoute = catchAsync(async (req, res, next) => {
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt
   } else {
-    return res.redirect(401, "/login")
+    return res.status(401).render("error", {
+      title: "Error",
+      message: `you need to be logged in to view this resource! Don't have an account? You can sign up for free!`,
+      statusCode: 401,
+    })
   }
   //
 
@@ -78,7 +87,12 @@ exports.protectRoute = catchAsync(async (req, res, next) => {
     decoded = jwt.verify(token, process.env.JWT_SECRET)
   } catch (err) {
     if (err instanceof JsonWebTokenError) {
-      return res.redirect(401, "/login")
+      return res.status(401).render("error", {
+        title: "Error",
+        message:
+          "Authentication failed...pls, ensure you have a valid email/password.",
+        statusCode: 401,
+      })
     }
   }
 
@@ -87,7 +101,7 @@ exports.protectRoute = catchAsync(async (req, res, next) => {
     return next(
       new AppError(
         "User not logged in or user doesn't exist! Pls, log in.",
-        404
+        401
       )
     )
   }

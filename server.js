@@ -12,7 +12,9 @@ const DB = process.env.DATABASE.replace(
 
 //connect database
 mongoose
-  .connect(DB, { useNewUrlParser: true })
+  .connect(DB, {
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Database is up and running!")
   })

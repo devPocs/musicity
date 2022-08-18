@@ -12,7 +12,9 @@ const login = async (email, password) => {
       }, 1500)
     }
   } catch (err) {
-    alert(err.response.data.message)
+    console.log(err.response.data)
+
+    document.write(err.response.data)
   }
 }
 
