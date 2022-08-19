@@ -2,7 +2,7 @@ const login = async (email, password) => {
   try {
     const result = await axios({
       method: "POST",
-      url: "http://127.0.0.1:80/api/v1/users/login",
+      url: "https://intense-crag-16037.herokuapp.com/login",
       data: { email, password },
     })
     if ((result.data.status = "success")) {
