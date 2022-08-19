@@ -385,7 +385,10 @@ body {
   .song_info li {
     list-style-type: none;
   }
-
+  .header_logo a {
+    text-decoration: none;
+    color: #16e0bd;
+  }
   /**song details page**/
   .song-header {
     display: flex;
