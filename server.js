@@ -2,9 +2,11 @@ const express = require("express")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const app = require("./app")
+const cors = require("cors")
 dotenv.config({ path: "./config.env" })
 const PORT = process.env.PORT || 80
 
+app.use(cors())
 const DB = process.env.DATABASE.replace(
   "<PASSWORD>",
   process.env.DATABASE_PASSWORD

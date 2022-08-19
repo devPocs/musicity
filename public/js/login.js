@@ -2,7 +2,7 @@ const login = async (email, password) => {
   try {
     const result = await axios({
       method: "POST",
-      url: "https://intense-crag-16037.herokuapp.com/login",
+      url: "https://musicity.herokuapp.com/api/v1/users/login",
       data: { email, password },
     })
     if ((result.data.status = "success")) {
